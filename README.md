@@ -1,4 +1,4 @@
-# AG_and_graphic
+# AG_and_graphics
 
 # Algoritmo Genético en Python 🧬
 
@@ -29,7 +29,7 @@ Para ejecutar este algoritmo, necesitarás Python 3.6 o superior. Las dependenci
 Clona este repositorio en tu máquina local usando:
 
 ```bash
-git clone https://github.com/tu-usuario/algoritmo-genetico.git
+git clone https://github.com/tu-usuario/AG_and_graphics.py
 ```
 
 Instala las dependencias necesarias con:
@@ -43,7 +43,7 @@ pip install numpy matplotlib seaborn
 Para ejecutar el algoritmo genético, simplemente ejecuta el script principal:
 
 ```bash
-python AG_2.py
+python AG_and_graphics.py
 ```
 
 ## Contribuciones 👋
