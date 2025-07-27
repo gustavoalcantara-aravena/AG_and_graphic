@@ -1,55 +1,118 @@
-# AG_and_graphics
+# 🧬 Adaptive Genetic Algorithm with Niching & Memetic Local Search
 
-# Algoritmo Genético en Python 🧬
+An **mono-objective evolutionary algorithm** that evolves binary chromosomes using adaptive mutation, memetic refinement, and diversity-preserving strategies.
 
-Este repositorio contiene una implementación de un algoritmo genético (AG) diseñado para optimizar problemas de búsqueda y optimización utilizando una representación binaria de soluciones.
+---
 
-## Descripción 📘
+## 🚀 Features
 
-El algoritmo implementa técnicas avanzadas de evolución genética para mejorar iterativamente una población de soluciones candidatas. Utiliza operadores genéticos como selección, cruce, y mutación para explorar el espacio de soluciones y encontrar óptimos.
+- ✅ **Adaptive mutation rate** based on convergence stagnation  
+- 🌱 **Niching & Speciation** using Hamming distance clustering  
+- 🧠 **Memetic local search**: bit-flip hill climbing on elite individuals  
+- 🔁 **Partial population restart** to escape local optima  
+- 🎯 **Tournament and roulette selection**  
+- 🔧 **Uniform and single-point crossover** with adaptive control  
+- 🧬 **Elite memory archive** for preserving top solutions  
+- 📊 **Advanced visualization** with `matplotlib` and optional `seaborn`
 
-## Características ✨
+---
 
-- **Selección por Torneo**: Selecciona los mejores individuos para la reproducción.
-- **Cruce Uniforme Adaptativo**: Cruza los padres para generar descendencia basándose en la similitud de los padres.
-- **Mutación con Tasa Ajustable**: Ajusta la tasa de mutación basada en la diversidad genética actual.
-- **Reinicio Parcial**: Reinicia parte de la población para mantener la diversidad.
-- **Visualización de Resultados**: Genera gráficos que muestran la evolución de la aptitud de la población.
+## 🔍 Objective Function
 
-## Requisitos 🛠️
+Maximize **consecutive groups of 1s** in a binary chromosome.  
+Fitness is computed as the **sum of squares of each group of 1s**, rewarding continuity over quantity.
 
-Para ejecutar este algoritmo, necesitarás Python 3.6 o superior. Las dependencias necesarias incluyen:
+### Example:
 
-- Numpy
-- Matplotlib
-- (Opcional) Seaborn para mejores gráficos
+Chromosome: [1, 1, 1, 0, 1, 1]
+Fitness = 3² + 2² = 9 + 4 = 13
 
-## Instalación 🔧
 
-Clona este repositorio en tu máquina local usando:
+---
 
-```bash
-git clone https://github.com/gustavoalcantara-aravena/AG_and_graphics.py
-```
+## 🧪 How It Works
 
-Instala las dependencias necesarias con:
+This is not a basic GA — it's a hybrid, adaptive framework inspired by:
+
+- 🧠 **Memetic algorithms**  
+- 🧩 **Niching genetic algorithms (crowding, speciation)**  
+- 🔁 **Stagnation-based partial restarts**  
+- 💾 **Elitist memory of top individuals**
+
+It balances **exploration and exploitation** using adaptive rates and clustering to preserve diversity and avoid premature convergence.
+
+---
+
+## 📈 Output Files
+
+- `evolucion_ag.png`: Classic fitness plot (best, average, worst)
+- `resultados_ag_YYYYMMDD_HHMMSS.png`: Comprehensive 4-panel chart:
+  - Fitness evolution
+  - Convergence & diversity analysis
+  - Fitness distribution
+  - Smoothed improvement rate
+
+---
+
+## ⚙️ Installation
+
+**Requirements**:
+- Python 3.6+
+- Optional: `numpy`, `matplotlib`, `seaborn`
+
+---
+
+### Install dependencies:
 
 ```bash
 pip install numpy matplotlib seaborn
+
+If numpy or seaborn are missing, the code will still run with reduced features.
+
 ```
+---
 
-## Uso 🚀
+## ▶️ Quick Start
 
-Para ejecutar el algoritmo genético, simplemente ejecuta el script principal:
+python3 ag_memetico.py
 
-```bash
-python AG_and_graphics.py
-```
 
-## Contribuciones 👋
+You can modify the evolutionary parameters here:
 
-Las contribuciones son bienvenidas. Si tienes mejoras o correcciones, por favor envía un pull request o abre un issue.
+if __name__ == "__main__":
+    ag = AlgoritmoGenetico(
+        tamanio_poblacion=200,
+        longitud_cromosoma=30,
+        tasa_mutacion=0.05,
+        tasa_mutacion_max=0.3
+    )
 
-## Licencia 📄
+---
 
-Este proyecto está bajo la licencia MIT. Vea el archivo LICENSE para más detalles.
+## 🎓 Academic Use
+
+This implementation is suitable for:
+
+Testing evolutionary operators (niching, adaptive rates, hybridization)
+
+Research in combinatorial optimization and NP-Hard problems
+
+Teaching advanced topics in genetic algorithms and metaheuristics
+
+Feel free to fork and extend for use in scientific projects or coursework.
+
+---
+
+## 🤝 Contributing
+Pull requests, ideas, and forks are welcome.
+If you use this in a publication, a citation is appreciated!
+
+---
+
+##📄 License
+
+MIT License
+
+---
+
+Author: Gustavo Alcántara, PhD Student
